@@ -21,8 +21,5 @@ RUN set -x \
 RUN set -x \
     && mkdir -p /ooniprobe
 
-RUN set -x \
-    && mkdir -p /ooniprobe
-
 COPY ./test/ /ooniprobe
 WORKDIR /ooniprobe

@@ -1,0 +1,12 @@
+FROM python:2.7.12
+
+RUN apt-get -q update
+RUN apt-get install -yq libdumbnet-dev libpcap-dev libgeoip-dev libffi-dev tor libssl-dev
+
+RUN pip install --upgrade ooniprobe
+
+RUN set -x \
+    && mkdir -p /ooniprobe
+
+COPY ./test/ /ooniprobe
+WORKDIR /ooniprobe

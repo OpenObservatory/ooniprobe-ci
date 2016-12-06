@@ -5,6 +5,7 @@ env:
 - TARGET=ubuntu-trusty
 - TARGET=ubuntu-xenial
 - TARGET=ubuntu-yakkety
+- TARGET=debian-pip
 sudo: required
 services:
 - docker
