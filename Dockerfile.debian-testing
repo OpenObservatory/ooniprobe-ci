@@ -13,8 +13,8 @@ RUN set -x \
 RUN set -x \
     && apt-get install -y ooniprobe deb.torproject.org-keyring
 
-RUN set -x \
-    && mkdir -p /ooniprobe
+# Trial dependencies
+RUN apt-get -qy install python-mock
 
 RUN set -x \
     && mkdir -p /ooniprobe
