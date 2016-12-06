@@ -1,6 +1,7 @@
 FROM debian:unstable
 
 RUN set -x \
+    && apt-get update \
     && apt-get install -y gnupg
 
 RUN set -x \
