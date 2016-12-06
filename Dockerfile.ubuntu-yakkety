@@ -5,7 +5,7 @@ FROM ubuntu:yakkety
 # https://bugs.launchpad.net/ubuntu/+source/enigmail/+bug/1623087
 RUN set -x \
     && apt-get update \
-    && apt remove gnupg \
+    && apt remove -y gnupg \
     && apt install --reinstall -y gnupg2 \
     && apt install -y dirmngr
 
