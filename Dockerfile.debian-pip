@@ -4,7 +4,7 @@ RUN apt-get -q update
 RUN apt-get install -yq libdumbnet-dev libpcap-dev libgeoip-dev libffi-dev tor libssl-dev
 
 # Trial dependencies
-RUN apt-get -qy install python-mock
+RUN pip install mock
 
 RUN pip install --upgrade ooniprobe
 
