@@ -1,8 +1,13 @@
 FROM ubuntu:yakkety
 
+
+# This is a workaround the following bug:
+# https://bugs.launchpad.net/ubuntu/+source/enigmail/+bug/1623087
 RUN set -x \
     && apt-get update \
-    && apt-get install -y gnupg
+    && apt remove gnupg \
+    && apt install --reinstall gnupg2 \
+    && apt install dirmngr
 
 RUN set -x \
     && gpg --keyserver keys.gnupg.net --recv A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89 \
