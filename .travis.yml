@@ -1,0 +1,12 @@
+env:
+- TARGET=debian-jessie
+- TARGET=debian-testing
+- TARGET=debian-unstable
+- TARGET=ubuntu-trusty
+- TARGET=ubuntu-xenial
+- TARGET=ubuntu-yakkety
+sudo: required
+services:
+- docker
+script:
+- ./build-and-run.sh $TARGET
