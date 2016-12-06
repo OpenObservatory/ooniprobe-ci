@@ -10,7 +10,7 @@ fi
 
 if [ ! -f $DOCKERFILE ];then
     echo "ERR: $DOCKERFILE does not exist"
-    exit 2 
+    exit 2
 fi
 
 echo "Building $TARGET ($DOCKERFILE)"
