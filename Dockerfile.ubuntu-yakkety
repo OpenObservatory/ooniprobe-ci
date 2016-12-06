@@ -6,8 +6,8 @@ FROM ubuntu:yakkety
 RUN set -x \
     && apt-get update \
     && apt remove gnupg \
-    && apt install --reinstall gnupg2 \
-    && apt install dirmngr
+    && apt install --reinstall -y gnupg2 \
+    && apt install -y dirmngr
 
 RUN set -x \
     && gpg --keyserver keys.gnupg.net --recv A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89 \
