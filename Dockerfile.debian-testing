@@ -5,7 +5,7 @@ RUN set -x \
     && apt-get install -y gnupg
 
 RUN set -x \
-    && gpg --keyserver keys.gnupg.net --recv A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89 \
+    && gpg --keyserver keys.gnupg.net:80 --recv A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89 \
     && gpg --export A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89 | apt-key add - \
     && echo 'deb http://deb.torproject.org/torproject.org testing main' | tee /etc/apt/sources.list.d/ooniprobe.list \
     && apt-get update
