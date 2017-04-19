@@ -11,3 +11,19 @@ services:
 - docker
 script:
 - ./build-and-run.sh $TARGET
+notifications:
+  irc:
+    channels:
+      - "irc.oftc.net#ooni"
+    on_success: change
+    on_failure: change
+    skip_join: true
+    template:
+      - "%{repository} (%{commit}): %{message} Diff: %{compare_url}"
+      - "Build: %{build_url}"
+  email:
+    recipients:
+      - irl@torproject.org
+      - contact@openobservatory.org
+    on_success: change
+    on_failure: change
